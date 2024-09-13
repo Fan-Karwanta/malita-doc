@@ -15,9 +15,6 @@ export const metadata: Metadata = {
   title: "MalitaDoc",
   description:
     "A healthcare patient management System designed to streamline patient registration, appointment scheduling, and medical records management for healthcare providers.",
-  icons: {
-    icon: "/assets/icons/logo-icon.svg",
-  },
 };
 
 export default function RootLayout({
@@ -30,7 +27,7 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-dark-300 font-sans antialiased",
-          fontSans.variable,
+          fontSans.variable
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="dark">

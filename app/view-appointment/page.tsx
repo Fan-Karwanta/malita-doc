@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import { StatCard } from "@/components/StatCard";
 import { columns } from "@/components/table/columns";
+import { columns2 } from "@/components/table/columns2";
 import { DataTable } from "@/components/table/DataTable";
 import { getRecentAppointmentList } from "@/lib/actions/appointment.actions";
+import { useEffect } from "react";
 
-const AdminPage = async () => {
+const ViewAppointmentsPage = async () => {
   const appointments = await getRecentAppointmentList();
 
   // JavaScript for hiding the header on scroll
@@ -42,46 +45,19 @@ const AdminPage = async () => {
           />
         </Link>
 
-        <p className="text-16-semibold">Admin</p>
-
-        <a
-          href="/"
-          className="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-md"
-        >
-          Logout
-        </a>
+        <p className="text-16-semibold">Appointments</p>
       </header>
 
       <main className="admin-main">
         <section className="w-full space-y-4">
-          <h1 className="header">Welcome 👋</h1>
+          <h1 className="header">Hello Dear Patients 👋</h1>
           <p className="text-dark-700">
-            Start the day with managing new appointments
+            These are the Recent Requested Appointments. Feel free to choose the
+            best schedule that is available for you.
           </p>
         </section>
 
-        <section className="admin-stat">
-          <StatCard
-            type="appointments"
-            count={appointments.scheduledCount}
-            label="Scheduled appointments"
-            icon={"/assets/icons/appointments.svg"}
-          />
-          <StatCard
-            type="pending"
-            count={appointments.pendingCount}
-            label="Pending appointments"
-            icon={"/assets/icons/pending.svg"}
-          />
-          <StatCard
-            type="cancelled"
-            count={appointments.cancelledCount}
-            label="Cancelled appointments"
-            icon={"/assets/icons/cancelled.svg"}
-          />
-        </section>
-
-        <DataTable columns={columns} data={appointments.documents} />
+        <DataTable columns={columns2} data={appointments.documents} />
       </main>
 
       {/* Inline script for header hiding */}
@@ -90,4 +66,4 @@ const AdminPage = async () => {
   );
 };
 
-export default AdminPage;
+export default ViewAppointmentsPage;

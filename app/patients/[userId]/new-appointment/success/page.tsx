@@ -14,7 +14,7 @@ const RequestSuccess = async ({
   const appointment = await getAppointment(appointmentId);
 
   const doctor = Doctors.find(
-    (doctor) => doctor.name === appointment.primaryPhysician,
+    (doctor) => doctor.name === appointment.primaryPhysician
   );
 
   return (
@@ -26,7 +26,7 @@ const RequestSuccess = async ({
             height={1000}
             width={1000}
             alt="logo"
-            className="h-10 w-fit"
+            className="h-25 w-48"
           />
         </Link>
 
@@ -73,7 +73,7 @@ const RequestSuccess = async ({
           </Link>
         </Button>
 
-        <p className="copyright">© 2024 MalitaDoc</p>
+        <p className="copyright">© 2024 Fan Karwanta</p>
       </div>
     </div>
   );

@@ -45,7 +45,7 @@ const ViewAppointmentsPage = async () => {
 
         <p className="text-16-semibold">Appointments</p>
   </header> */}
-
+      <br />
       <main className="admin-main">
         <section className="w-full space-y-4">
           <h1 className="header">Hello Dear Patients 👋</h1>

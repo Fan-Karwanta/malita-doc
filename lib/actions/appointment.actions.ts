@@ -24,6 +24,7 @@ export const createAppointment = async (
     );
 
     revalidatePath("/admin");
+    revalidatePath("/view-appointment");
     return parseStringify(newAppointment);
   } catch (error) {
     console.error("An error occurred while creating a new appointment:", error);
@@ -69,7 +70,6 @@ export const getRecentAppointmentList = async () => {
       documents: appointments.documents,
     };
 
-    revalidatePath("/view-appointment");
     return parseStringify(data);
   } catch (error) {
     console.error(

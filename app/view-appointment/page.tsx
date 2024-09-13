@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { StatCard } from "@/components/StatCard";
-import { columns } from "@/components/table/columns";
+//import { StatCard } from "@/components/StatCard";
+//import { columns } from "@/components/table/columns";
 import { columns2 } from "@/components/table/columns2";
 import { DataTable } from "@/components/table/DataTable";
+
 import { getRecentAppointmentList } from "@/lib/actions/appointment.actions";
-import { useEffect } from "react";
+//import { useEffect } from "react";
 
 const ViewAppointmentsPage = async () => {
   const appointments = await getRecentAppointmentList();

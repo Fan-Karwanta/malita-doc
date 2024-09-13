@@ -10,7 +10,8 @@ import {
   DATABASE_ID,
   databases,
 } from "../appwrite.config";
-import { formatDateTime, parseStringify } from "../utils";
+
+import { parseStringify } from "../utils";
 
 //  CREATE APPOINTMENT
 export const createAppointment = async (

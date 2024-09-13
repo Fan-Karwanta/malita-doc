@@ -69,6 +69,7 @@ export const getRecentAppointmentList = async () => {
       documents: appointments.documents,
     };
 
+    revalidatePath("/view-appointment");
     return parseStringify(data);
   } catch (error) {
     console.error(

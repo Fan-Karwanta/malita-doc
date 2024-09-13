@@ -1,3 +1,5 @@
+export const revalidate = 0; // Disable caching to fetch new data every request
+
 import { columns2 } from "@/components/table/columns2";
 import { DataTable } from "@/components/table/DataTable";
 

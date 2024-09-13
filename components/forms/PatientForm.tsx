@@ -5,8 +5,6 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-//import Link from "next/link"; // Import Link from next/link
-//import { Button } from "@/components/ui/button"; // Ensure you import Button from your UI library
 
 import { Form } from "@/components/ui/form";
 import { createUser } from "@/lib/actions/patient.actions";

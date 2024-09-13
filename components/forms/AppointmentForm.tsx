@@ -2,15 +2,14 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"; // next/navigation import should come after next/link
+import Link from "next/link"; // Import Link from next/link
+
 import { Dispatch, SetStateAction, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import Link from "next/link"; // Import Link from next/link
-
 import { Button } from "@/components/ui/button"; // Make sure to import Button from your UI library
-
 import { SelectItem } from "@/components/ui/select";
 import { Doctors } from "@/constants";
 import {
@@ -21,10 +20,8 @@ import { getAppointmentSchema } from "@/lib/validation";
 import { Appointment } from "@/types/appwrite.types";
 
 import "react-datepicker/dist/react-datepicker.css";
-
 import CustomFormField, { FormFieldType } from "../CustomFormField";
 import SubmitButton from "../SubmitButton";
-
 import { Form } from "../ui/form";
 
 export const AppointmentForm = ({

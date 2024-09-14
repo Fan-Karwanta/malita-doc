@@ -1,5 +1,6 @@
 "use client";
 
+import { revalidatePath } from "next/cache";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import { useRouter } from "next/navigation"; // next/navigation import should come after next/link
@@ -230,10 +231,17 @@ export const AppointmentForm = ({
           {type !== "schedule" && type !== "cancel" && (
             <Button
               variant="outline"
-              className="shad-yellow-btn" // Added yellow color and spacing
-              asChild
+              className="w-full text-white shad-gold-btn"
+              style={{
+                backgroundColor: "#DAA520",
+                hover: { backgroundColor: "#B8860B" },
+              }}
+              onClick={() => {
+                revalidatePath("/view-appointment");
+                window.location.href = "/view-appointment";
+              }}
             >
-              <Link href={`/view-appointment`}>View Appointments</Link>
+              View Appointments
             </Button>
           )}
         </div>

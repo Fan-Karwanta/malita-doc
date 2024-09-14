@@ -226,21 +226,22 @@ export const AppointmentForm = ({
           </SubmitButton>
         </form>
         {/* Conditional rendering for the View Appointments button */}
-        {type !== "schedule" &&
-          type !== "cancel" && ( // Button is hidden if type is "schedule" or "cancel"
-            <div className="mt-4">
-              <Button
-                variant="outline"
-                className="w-full text-white shad-gold-btn"
+        {type !== "schedule" && type !== "cancel" && (
+          <div className="mt-4">
+            <Link href="/view-appointment">
+              <a
+                className="w-full text-white shad-gold-btn py-2 px-4 rounded-md"
                 style={{
                   backgroundColor: "#DAA520",
                   hover: { backgroundColor: "#B8860B" },
                 }}
               >
-                <Link href={`/view-appointment`}>View Appointments</Link>
-              </Button>
-            </div>
-          )}
+                View Appointments
+              </a>
+            </Link>
+          </div>
+        )}
+
         <br />
         {type !== "schedule" && type !== "cancel" && (
           <a

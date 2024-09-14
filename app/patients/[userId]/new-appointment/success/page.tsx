@@ -72,6 +72,14 @@ const RequestSuccess = async ({
             New Appointment
           </Link>
         </Button>
+        <p> ----- OR ----- </p>
+        <Button
+          variant="outline"
+          className="shad-yellow-btn" // Added yellow color and spacing
+          asChild
+        >
+          <Link href={`/view-appointment`}>View Appointments</Link>
+        </Button>
 
         <p className="copyright">© 2024 Fan Karwanta</p>
       </div>

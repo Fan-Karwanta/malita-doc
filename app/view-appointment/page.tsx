@@ -12,7 +12,7 @@ const ViewAppointmentsPage = async () => {
       <br />
       <main className="admin-main">
         <section className="w-full space-y-4">
-          <h1 className="header">Hello Dear Patients 👋</h1>
+          <h1 className="header">Hello Dear Patients 🩺</h1>
           <p className="text-dark-700">
             These are the Recent Requested Appointments. Feel free to choose the
             best schedule that is available for you.

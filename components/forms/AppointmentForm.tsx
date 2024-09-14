@@ -234,14 +234,16 @@ export const AppointmentForm = ({
               backgroundColor: "#DAA520",
               hover: { backgroundColor: "#B8860B" },
             }}
-            onClick={() => router.push("/view-appointment")}
+            onClick={() => {
+              window.location.href = "/view-appointment";
+            }}
           >
             View Appointments
           </Button>
         </div>
 
         <br />
-        {/*
+
         {type !== "schedule" && type !== "cancel" && (
           <Link href="/" passHref>
             <Button
@@ -255,7 +257,7 @@ export const AppointmentForm = ({
               Logout
             </Button>
           </Link>
-            )} */}
+        )}
       </Form>
     </>
   );

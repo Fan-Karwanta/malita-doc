@@ -230,16 +230,10 @@ export const AppointmentForm = ({
           {type !== "schedule" && type !== "cancel" && (
             <Button
               variant="outline"
-              className="w-full text-white shad-gold-btn"
-              style={{
-                backgroundColor: "#DAA520",
-                hover: { backgroundColor: "#B8860B" },
-              }}
-              onClick={() => {
-                window.location.href = "/view-appointment";
-              }}
+              className="shad-yellow-btn" // Added yellow color and spacing
+              asChild
             >
-              View Appointments
+              <Link href={`/view-appointment`}>View Appointments</Link>
             </Button>
           )}
         </div>

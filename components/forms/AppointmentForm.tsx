@@ -1,6 +1,5 @@
 "use client";
 
-import { revalidatePath } from "next/cache";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import { useRouter } from "next/navigation"; // next/navigation import should come after next/link
@@ -237,7 +236,6 @@ export const AppointmentForm = ({
                 hover: { backgroundColor: "#B8860B" },
               }}
               onClick={() => {
-                revalidatePath("/view-appointment");
                 window.location.href = "/view-appointment";
               }}
             >

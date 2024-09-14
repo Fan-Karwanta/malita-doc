@@ -5,34 +5,14 @@ import { StatCard } from "@/components/StatCard";
 import { columns } from "@/components/table/columns";
 import { DataTable } from "@/components/table/DataTable";
 import { getRecentAppointmentList } from "@/lib/actions/appointment.actions";
+import script from "next/script";
 
 const AdminPage = async () => {
   const appointments = await getRecentAppointmentList();
 
-  // JavaScript for hiding the header on scroll
-  const script = `
-    (function() {
-      let lastScrollTop = 0;
-      const header = document.querySelector('.admin-header');
-
-      window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (scrollTop > lastScrollTop && scrollTop > 100) {
-          // Scrolling down
-          header.style.transform = 'translateY(-100%)'; // Hide header
-        } else {
-          // Scrolling up
-          header.style.transform = 'translateY(0)'; // Show header
-        }
-        lastScrollTop = scrollTop;
-      });
-    })();
-  `;
-
   return (
     <div className="mx-auto flex max-w-7xl flex-col space-y-14">
-      <header className="admin-header flex items-center justify-between">
+      {/*<header className="admin-header flex items-center justify-between">
         <Link href="/" className="cursor-pointer">
           <Image
             src="/assets/icons/logo-header.svg"
@@ -44,18 +24,19 @@ const AdminPage = async () => {
         </Link>
 
         <p className="text-16-semibold">Admin</p>
-
+  
         <a
           href="/"
           className="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-md"
         >
           Logout
         </a>
-      </header>
+      </header> */}
+      <br />
 
       <main className="admin-main">
         <section className="w-full space-y-4">
-          <h1 className="header">Welcome 🩺</h1>
+          <h1 className="header">Welcome Admin 🩺</h1>
           <p className="text-dark-700">
             Start the day with managing new appointments
           </p>
@@ -83,6 +64,12 @@ const AdminPage = async () => {
         </section>
 
         <DataTable columns={columns} data={appointments.documents} />
+        <a
+          href="/"
+          className="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-md"
+        >
+          Logout
+        </a>
       </main>
 
       {/* Inline script for header hiding */}

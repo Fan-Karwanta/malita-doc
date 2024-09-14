@@ -227,19 +227,21 @@ export const AppointmentForm = ({
         </form>
         {/* Conditional rendering for the View Appointments button */}
         <div className="mt-4">
-          <Button
-            variant="outline"
-            className="w-full text-white shad-gold-btn"
-            style={{
-              backgroundColor: "#DAA520",
-              hover: { backgroundColor: "#B8860B" },
-            }}
-            onClick={() => {
-              window.location.href = "/view-appointment";
-            }}
-          >
-            View Appointments
-          </Button>
+          {type !== "schedule" && type !== "cancel" && (
+            <Button
+              variant="outline"
+              className="w-full text-white shad-gold-btn"
+              style={{
+                backgroundColor: "#DAA520",
+                hover: { backgroundColor: "#B8860B" },
+              }}
+              onClick={() => {
+                window.location.href = "/view-appointment";
+              }}
+            >
+              View Appointments
+            </Button>
+          )}
         </div>
 
         <br />

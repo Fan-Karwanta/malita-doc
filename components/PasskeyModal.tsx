@@ -33,15 +33,19 @@ export const PasskeyModal = () => {
       : null;
 
   useEffect(() => {
-    const accessKey = encryptedKey && decryptKey(encryptedKey);
+    // Force the modal to open if the path has 'admin=true'
+    const queryParams = new URLSearchParams(window.location.search);
+    const isAdminPath = queryParams.get("admin") === "true";
 
-    if (path)
-      if (accessKey === process.env.NEXT_PUBLIC_ADMIN_PASSKEY!.toString()) {
-        setOpen(false);
-        router.push("/admin");
-      } else {
-        setOpen(true);
-      }
+    if (
+      isAdminPath ||
+      (encryptedKey &&
+        decryptKey(encryptedKey) !== process.env.NEXT_PUBLIC_ADMIN_PASSKEY)
+    ) {
+      setOpen(true);
+    } else {
+      setOpen(false);
+    }
   }, [encryptedKey]);
 
   const closeModal = () => {
@@ -50,16 +54,15 @@ export const PasskeyModal = () => {
   };
 
   const validatePasskey = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     e.preventDefault();
 
     if (passkey === process.env.NEXT_PUBLIC_ADMIN_PASSKEY) {
       const encryptedKey = encryptKey(passkey);
-
       localStorage.setItem("accessKey", encryptedKey);
-
       setOpen(false);
+      router.push("/admin");
     } else {
       setError("Invalid passkey. Please try again.");
     }

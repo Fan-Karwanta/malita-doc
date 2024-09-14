@@ -227,21 +227,21 @@ export const AppointmentForm = ({
         </form>
         {/* Conditional rendering for the View Appointments button */}
         <div className="mt-4">
-          <Link href="/view-appointment" passHref>
-            <Button
-              variant="outline"
-              className="w-full text-white"
-              style={{
-                backgroundColor: "#DAA520",
-                hover: { backgroundColor: "#B8860B" },
-              }}
-            >
-              View Appointments
-            </Button>
-          </Link>
+          <Button
+            variant="outline"
+            className="w-full text-white shad-gold-btn"
+            style={{
+              backgroundColor: "#DAA520",
+              hover: { backgroundColor: "#B8860B" },
+            }}
+            onClick={() => router.push("/view-appointment")}
+          >
+            View Appointments
+          </Button>
         </div>
 
         <br />
+        {/*
         {type !== "schedule" && type !== "cancel" && (
           <Link href="/" passHref>
             <Button
@@ -255,7 +255,7 @@ export const AppointmentForm = ({
               Logout
             </Button>
           </Link>
-        )}
+            )} */}
       </Form>
     </>
   );

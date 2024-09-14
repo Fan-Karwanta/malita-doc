@@ -226,30 +226,35 @@ export const AppointmentForm = ({
           </SubmitButton>
         </form>
         {/* Conditional rendering for the View Appointments button */}
-        {type !== "schedule" && type !== "cancel" && (
-          <div className="mt-4">
-            <Link href="/view-appointment">
-              <a
-                className="w-full text-white shad-gold-btn py-2 px-4 rounded-md"
-                style={{
-                  backgroundColor: "#DAA520",
-                  hover: { backgroundColor: "#B8860B" },
-                }}
-              >
-                View Appointments
-              </a>
-            </Link>
-          </div>
-        )}
+        <div className="mt-4">
+          <Link href="/view-appointment" passHref>
+            <Button
+              variant="outline"
+              className="w-full text-white"
+              style={{
+                backgroundColor: "#DAA520",
+                hover: { backgroundColor: "#B8860B" },
+              }}
+            >
+              View Appointments
+            </Button>
+          </Link>
+        </div>
 
         <br />
         {type !== "schedule" && type !== "cancel" && (
-          <a
-            href="/"
-            className="bg-red-700 text-center hover:bg-red-600 text-white py-2 px-4 rounded-md"
-          >
-            Logout
-          </a>
+          <Link href="/" passHref>
+            <Button
+              variant="outline"
+              className="w-full text-white"
+              style={{
+                backgroundColor: "red",
+                hover: { backgroundColor: "#B8860B" },
+              }}
+            >
+              Logout
+            </Button>
+          </Link>
         )}
       </Form>
     </>

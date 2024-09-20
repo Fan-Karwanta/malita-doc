@@ -18,4 +18,8 @@ Admin:
 - Logout
 
 
-Massive Credits to Adrian from JSM for being a huge inspiration for this project.
+Massive Credits to Adrian|JSM for being a huge inspiration for this project.
+
+To God Be The Glory!
+
+MalitaDoc 2024.
